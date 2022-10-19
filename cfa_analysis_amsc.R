@@ -41,42 +41,18 @@ my_data <- read_excel(file.choose())
 
 ### THIS SECTION CREATES SUMMARY STATISTICS FOR THE AMS-C ITEMS ###
 
-## Frequency Tables for each item. Also creates a bar chart for the responses.
-# Items have been labeled "amsc_#" to reflect order in published instrument.
-tab1(my_data$amsc_1, cum.percent = TRUE)
-tab1(my_data$amsc_2, cum.percent = TRUE)
-tab1(my_data$amsc_3, cum.percent = TRUE)
-tab1(my_data$amsc_4, cum.percent = TRUE)
-tab1(my_data$amsc_5, cum.percent = TRUE)
-tab1(my_data$amsc_6, cum.percent = TRUE)
-tab1(my_data$amsc_7, cum.percent = TRUE)
-tab1(my_data$amsc_8, cum.percent = TRUE)
-tab1(my_data$amsc_9, cum.percent = TRUE)
-tab1(my_data$amsc_10, cum.percent = TRUE)
-tab1(my_data$amsc_11, cum.percent = TRUE)
-tab1(my_data$amsc_12, cum.percent = TRUE)
-tab1(my_data$amsc_13, cum.percent = TRUE)
-tab1(my_data$amsc_14, cum.percent = TRUE)
-tab1(my_data$amsc_15, cum.percent = TRUE)
-tab1(my_data$amsc_16, cum.percent = TRUE)
-tab1(my_data$amsc_17, cum.percent = TRUE)
-tab1(my_data$amsc_18, cum.percent = TRUE)
-tab1(my_data$amsc_19, cum.percent = TRUE)
-tab1(my_data$amsc_20, cum.percent = TRUE)
-tab1(my_data$amsc_21, cum.percent = TRUE)
-tab1(my_data$amsc_22, cum.percent = TRUE)
-tab1(my_data$amsc_23, cum.percent = TRUE)
-tab1(my_data$amsc_24, cum.percent = TRUE)
-tab1(my_data$amsc_25, cum.percent = TRUE)
-tab1(my_data$amsc_26, cum.percent = TRUE)
-tab1(my_data$amsc_27, cum.percent = TRUE)
-tab1(my_data$amsc_28, cum.percent = TRUE)
-
 ## Descriptive statistics for each item.
-# Adjust values in select function based on location of 
-# item variables in data set
-desc_stats <- my_data %>% select(1:28)
+# Items have been labeled "amsc_#" to reflect order in published instrument.
+# Adjust values in select function based on location of item variables 
+# in data set
+desc_stats <- my_data %>% select(16:43)
 describe(desc_stats)
+
+## Frequency Tables for each item.
+varlist <- names(desc_stats)
+for (i in varlist) {
+  print(table(desc_stats[[i]]))
+}
 
 ################################################################################
 
