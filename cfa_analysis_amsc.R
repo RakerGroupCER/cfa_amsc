@@ -120,3 +120,13 @@ model.test <- '
 cfa.model <- cfa(data = my_data, model = model.test, ordered =TRUE)
 
 ################################################################################
+
+### THIS SECTION SUMMARIZES THE CFA MODEL ###
+
+## Generate summary of model including GOF statistics
+summary(cfa.model, standardized = TRUE, fit.measure = TRUE)
+
+## Modification indices to further evaluate the model
+modindices(cfa.model, minimum.value = 100, sort = TRUE)
+
+################################################################################
