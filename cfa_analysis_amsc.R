@@ -26,6 +26,9 @@ library(psych)
 ## The "lavaan" package is used to run and evaluate the CFA model
 library(lavaan)
 
+## The "tidyverse" package is used to subset data
+library(tidyverse)
+
 ################################################################################
 
 ### THIS SECTION READS IN THE DATA FROM AN .XLSX FILE ###
