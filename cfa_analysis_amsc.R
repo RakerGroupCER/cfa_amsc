@@ -23,7 +23,7 @@ library (readxl)
 
 ## Data file should be in the working directory.
 # Example file name is "data.xls"; change it match actual data file name.
-my_data <- read_excel("data.xls")
+my_data <- read_excel()
 
 ################################################################################
 
