@@ -130,3 +130,16 @@ summary(cfa.model, standardized = TRUE, fit.measure = TRUE)
 modindices(cfa.model, minimum.value = 100, sort = TRUE)
 
 ################################################################################
+
+### THIS SECTION GENERATES FACTOR SCORES FOR CFA MODEL ###
+
+## Predict factor scores
+predict.factors <- lavPredict(cfa.model)
+
+## Generate descriptive statistics for the factor scores
+describe(predict.factors)
+
+## Add predicted factor scores to data set (as a "new" data set)
+new_my_data <- cbind(my_data, predict.factors)
+
+################################################################################
