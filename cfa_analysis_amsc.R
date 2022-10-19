@@ -29,6 +29,9 @@ library(lavaan)
 ## The "tidyverse" package is used to subset data
 library(tidyverse)
 
+## The "dlpyr" package is used to renaming columns in dataframe
+library(dplyr)
+
 ################################################################################
 
 ### THIS SECTION READS IN THE DATA FROM AN .XLSX FILE ###
@@ -46,13 +49,31 @@ my_data <- read_excel(file.choose())
 # Adjust values in select function based on location of item variables 
 # in data set
 desc_stats <- my_data %>% select(16:43)
-describe(desc_stats)
+desc_stats_table <- describe(desc_stats)
 
 ## Frequency Tables for each item.
+# Create list of variable names
 varlist <- names(desc_stats)
+
+# Create labels for responses
+freq_table_asmc <- c("1", "2", "3", "4", "5")
+
+# Build table of frequencies
 for (i in varlist) {
-  print(table(desc_stats[[i]]))
+  temp_store <- table(desc_stats[[i]])
+  freq_table_asmc <- cbind(freq_table_asmc, temp_store)
 }
+
+# Make frequency table a data frame
+freq_table_asmc <- as.data.frame(freq_table_asmc)
+
+# Create variable names for frequency table and replace old variable names
+freq_table_asmc <- as.data.frame(freq_table_asmc)
+colnames(freq_table_asmc) <- var_names
+
+# Transpose frequency table and select only those observations for amsc items
+amsc_freq_transpose <- as.data.frame(t(freq_table_asmc))
+amsc_freq_transpose <- amsc_freq_transpose[2:29,]
 
 ################################################################################
 
