@@ -75,6 +75,11 @@ colnames(freq_table_asmc) <- var_names
 amsc_freq_transpose <- as.data.frame(t(freq_table_asmc))
 amsc_freq_transpose <- amsc_freq_transpose[2:29,]
 
+## Combine Descriptive and Frequency Tables
+summary_table <- cbind(desc_stats_table, amsc_freq_transpose)
+var_keep <- c("mean", "sd", "median", "skew", "kurtosis", "1", "2", "3", "4", "5")
+summary_table <- summary_table[var_keep]
+
 ################################################################################
 
 ### THIS SECTION SETS THE CFA MODEL ###
