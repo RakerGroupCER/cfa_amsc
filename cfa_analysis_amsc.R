@@ -17,19 +17,22 @@
 ## The "readxl" package is used to input data from an .xlsx file
 library (readxl)
 
+## The "epiDisplay" package is used to tabulate data
+library(epiDisplay)
+
 ################################################################################
 
 ### THIS SECTION READS IN THE DATA FROM AN .XLSX FILE ###
 
 ## Data file should be in the working directory.
 # Example file name is "data.xls"; change it match actual data file name.
-my_data <- read_excel()
+my_data <- read_excel(file.choose())
 
 ################################################################################
 
 ### THIS SECTION CREATES SUMMARY STATISTICS FOR THE AMS-C ITEMS ###
 
-## Frequency Tables for each item.
+## Frequency Tables for each item. Also creates a bar chart for the responses.
 # Items have been labeled "amsc_#" to reflect order in published instrument.
 tab1(my_data$amsc_1, cum.percent = TRUE)
 tab1(my_data$amsc_2, cum.percent = TRUE)
