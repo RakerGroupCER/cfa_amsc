@@ -23,6 +23,9 @@ library(epiDisplay)
 ## The "psych" package is used to generate descriptive statistics
 library(psych)
 
+## The "lavaan" package is used to run and evaluate the CFA model
+library(lavaan)
+
 ################################################################################
 
 ### THIS SECTION READS IN THE DATA FROM AN .XLSX FILE ###
