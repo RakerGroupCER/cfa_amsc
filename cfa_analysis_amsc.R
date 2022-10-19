@@ -20,6 +20,9 @@ library (readxl)
 ## The "epiDisplay" package is used to tabulate data
 library(epiDisplay)
 
+## The "psych" package is used to generate descriptive statistics
+library(psych)
+
 ################################################################################
 
 ### THIS SECTION READS IN THE DATA FROM AN .XLSX FILE ###
