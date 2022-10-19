@@ -97,3 +97,18 @@ describe(my_data$amsc_27)
 describe(my_data$amsc_28)
 
 ################################################################################
+
+### THIS SECTION SETS THE CFA MODEL ###
+
+model.test <- '
+  AMOT =~ amsc_5 + amsc_12 + amsc_19 + amsc_26
+  EEXT =~ amsc_1 + amsc_8 + amsc_15 + amsc_22
+  EINT =~ amsc_7 + amsc_14 + amsc_21 + amsc_28
+  EIDN =~ amsc_3 + amsc_10 + amsc_17 + amsc_24
+  IEXP =~ amsc_4 + amsc_11 + amsc_18 + amsc_25
+  IACM =~ amsc_6 + amsc_13 + amsc_20 + amsc_27
+  IKNW =~ amsc_2 + amsc_9 + amsc_16 + amsc_23
+  '
+
+################################################################################
+
