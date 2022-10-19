@@ -73,34 +73,10 @@ tab1(my_data$amsc_27, cum.percent = TRUE)
 tab1(my_data$amsc_28, cum.percent = TRUE)
 
 ## Descriptive statistics for each item.
-describe(my_data$amsc_1)
-describe(my_data$amsc_2)
-describe(my_data$amsc_3)
-describe(my_data$amsc_4)
-describe(my_data$amsc_5)
-describe(my_data$amsc_6)
-describe(my_data$amsc_7)
-describe(my_data$amsc_8)
-describe(my_data$amsc_9)
-describe(my_data$amsc_10)
-describe(my_data$amsc_11)
-describe(my_data$amsc_12)
-describe(my_data$amsc_13)
-describe(my_data$amsc_14)
-describe(my_data$amsc_15)
-describe(my_data$amsc_16)
-describe(my_data$amsc_17)
-describe(my_data$amsc_18)
-describe(my_data$amsc_19)
-describe(my_data$amsc_20)
-describe(my_data$amsc_21)
-describe(my_data$amsc_22)
-describe(my_data$amsc_23)
-describe(my_data$amsc_24)
-describe(my_data$amsc_25)
-describe(my_data$amsc_26)
-describe(my_data$amsc_27)
-describe(my_data$amsc_28)
+# Adjust values in select function based on location of 
+# item variables in data set
+desc_stats <- my_data %>% select(1:28)
+describe(desc_stats)
 
 ################################################################################
 
