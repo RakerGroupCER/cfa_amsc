@@ -127,6 +127,7 @@ cfa.model <- cfa(data = my_data, model = model.test, ordered =TRUE)
 summary(cfa.model, standardized = TRUE, fit.measure = TRUE)
 
 ## Modification indices to further evaluate the model
+# Edit "minimum.value" as needed to truncate number of returned indices
 modindices(cfa.model, minimum.value = 100, sort = TRUE)
 
 ################################################################################
