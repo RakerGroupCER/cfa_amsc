@@ -128,7 +128,9 @@ modindices(cfa.model, minimum.value = 100, sort = TRUE)
 predict.factors <- lavPredict(cfa.model)
 
 ## Generate descriptive statistics for the factor scores
-describe(predict.factors)
+factor_summary <- describe(predict.factors)
+var_keep <- c("mean", "sd", "median", "min", "max", "skew", "kurtosis")
+factor_summary <- factor_summary[var_keep]
 
 ## Add predicted factor scores to data set (as a "new" data set)
 new_my_data <- cbind(my_data, predict.factors)
