@@ -69,7 +69,7 @@ freq_table_asmc <- as.data.frame(freq_table_asmc)
 
 # Create variable names for frequency table and replace old variable names
 freq_table_asmc <- as.data.frame(freq_table_asmc)
-colnames(freq_table_asmc) <- var_names
+colnames(freq_table_asmc) <- varlist
 
 # Transpose frequency table and select only those observations for amsc items
 amsc_freq_transpose <- as.data.frame(t(freq_table_asmc))
