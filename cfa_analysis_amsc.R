@@ -86,6 +86,9 @@ summary_table$sd <- round(summary_table$sd, 2)
 summary_table$skew <- round(summary_table$skew, 3)
 summary_table$kurtosis <- round(summary_table$kurtosis, 3)
 
+## Return Descriptive Statistics Table
+summary_table
+
 ################################################################################
 
 ### THIS SECTION SETS THE CFA MODEL ###
