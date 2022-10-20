@@ -80,6 +80,12 @@ summary_table <- cbind(desc_stats_table, amsc_freq_transpose)
 var_keep <- c("mean", "sd", "median", "skew", "kurtosis", "1", "2", "3", "4", "5")
 summary_table <- summary_table[var_keep]
 
+# Format summary table (i.e., round off variables)
+summary_table$mean <- round(summary_table$mean, 2)
+summary_table$sd <- round(summary_table$sd, 2)
+summary_table$skew <- round(summary_table$skew, 3)
+summary_table$kurtosis <- round(summary_table$kurtosis, 3)
+
 ################################################################################
 
 ### THIS SECTION SETS THE CFA MODEL ###
