@@ -132,6 +132,9 @@ factor_summary <- describe(predict.factors)
 var_keep <- c("mean", "sd", "median", "min", "max", "skew", "kurtosis")
 factor_summary <- factor_summary[var_keep]
 
+## Return Descriptive Statistics Table
+factor_summary
+
 ## Add predicted factor scores to data set (as a "new" data set)
 new_my_data <- cbind(my_data, predict.factors)
 
