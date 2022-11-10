@@ -107,7 +107,8 @@ model.test <- '
 
 ### THIS SECTION RUNS THE CFA MODEL ###
 
-cfa.model <- cfa(data = my_data, model = model.test, ordered =TRUE)
+cfa.model <- cfa(data = my_data, model = model.test, estimator = "DWLS", 
+                 se = "robust.sem", test = "scaled.shifted")
 
 ################################################################################
 
@@ -139,3 +140,4 @@ factor_summary
 new_my_data <- cbind(my_data, predict.factors)
 
 ################################################################################
+
